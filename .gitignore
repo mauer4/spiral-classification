@@ -8,11 +8,6 @@ env/
 venv/
 ENV/
 
-# Output files
-*.gif
-*.png
-spiral_last_frame.png
-
 # IDE
 .vscode/
 .idea/
