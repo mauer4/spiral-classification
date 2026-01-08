@@ -341,18 +341,18 @@ def run_spiral_experiment(
                   color='#4ECDC4', edgecolors='white', linewidth=0.3)
         
         # Boundaries
-        plot_linear_boundary(ax, w, xlim, ylim, label=f"Linear (no act, no bias) acc={acc_lin:.2f}")
+        plot_linear_boundary(ax, w, xlim, ylim, label=f"Linear perceptron - 2 weights")
         mlp_proxy = plot_mlp_boundary(ax, params, xlim, ylim, activation=mlp_activation)
         
         handles, labels = ax.get_legend_handles_labels()
         handles.append(mlp_proxy)
-        labels.append(f"MLP (+{mlp_activation}) acc={acc_mlp:.2f}")
+        labels.append(f"MLP with non-linear activation function")
         ax.legend(handles, labels, loc="upper right", framealpha=0.9, fontsize=10)
         
         ax.set_xlim(*xlim)
         ax.set_ylim(*ylim)
         ax.set_aspect("equal", adjustable="box")
-        ax.set_title(f"Two-spiral growth: theta_max={theta_max:.2f}", fontsize=14, fontweight='bold', pad=15)
+        ax.set_title(f"Two-spiral growth: Separable by line?", fontsize=14, fontweight='bold', pad=15)
         ax.set_xlabel('X', fontsize=11)
         ax.set_ylabel('Y', fontsize=11)
         ax.grid(True, alpha=0.15, linestyle='--')
